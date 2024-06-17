@@ -1,0 +1,6 @@
+*.pdf
+*.rar
+*.ipynb
+.idea
+.code
+volumes
