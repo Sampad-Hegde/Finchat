@@ -9,7 +9,12 @@ Scraped using `Bharat-sm-data` [PyPi](https://pypi.org/project/Bharat-sm-data/)
 
 ## Demo Video:
 
-[![Demo](Demo/Finchat-INFY.png)](Demo/Finchat-Demo.mp4)
+https://github.com/Sampad-Hegde/Finchat/assets/42510098/7c115452-2ed1-478d-b330-87946adf4d8f
+
+## Image:
+![Finchat-INFY](https://github.com/Sampad-Hegde/Finchat/assets/42510098/152da541-97fc-4448-9dd8-891b3f505a2e)
+
+
 
 ### You can find the Hosted version here: https://finchat.sh-algo.in
 *Note that this application is running from my home servers so expect some downtimes*
