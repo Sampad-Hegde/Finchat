@@ -62,7 +62,7 @@ services:
 
   attu:
     container_name: milvus-attu
-    image: zilliz/attu:latest
+    image: zilliz/attu:v2.4.0
     ports:
       - "8000:3000"
     environment:

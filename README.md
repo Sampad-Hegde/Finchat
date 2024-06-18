@@ -2,6 +2,18 @@
 
 Finchat is an innovative financial chatbot application designed to provide users with accurate and insightful financial information and advice. This project leverages advanced technologies, including Retrieval-Augmented Generation (RAG) using Ollama, an intuitive user interface built with Streamlit, and efficient vector storage and search powered by Milvus.
 
+## Data Source :
+BSE (Bombay Stock Exchange) Limited
+
+Scraped using `Bharat-sm-data` [PyPi](https://pypi.org/project/Bharat-sm-data/)
+
+## Demo Video:
+
+[![Demo](Demo/Finchat-INFY.png)](Demo/Finchat-Demo.mp4)
+
+### You can find the Hosted version here: https://finchat.sh-algo.in
+*Note that this application is running from my home servers so expect some downtimes*
+
 ### Key Features
 
 - **Advanced Financial Insights**: Finchat uses state-of-the-art RAG techniques to deliver precise and contextually relevant financial information.
@@ -76,7 +88,7 @@ streamlit run App/app.py
 
 ---
 
-## Note: This Code is completely free to tune according to our need; Happy Coding :)
+### Feel free to modify this code to suit your needs. Happy coding!
 
 
 
