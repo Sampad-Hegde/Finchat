@@ -8,8 +8,9 @@ import os
 
 p = Prompt()
 s = Search()
-llm = Client(host=f'http://{os.getenv("LLM_HOST", "localhost")}:11434')
+llm = Client(host=f'http://{os.getenv("OLLAMA_HOST", "localhost")}:11434')
 MODEL = os.getenv('LLM_MODEL', 'phi3')
+print(f"Using model: {MODEL} on Server at http://{os.getenv('OLLAMA_HOST', 'localhost')}:11434")
 
 
 def ollama_stream_generator(query: str, context: str, company: str, fy: int or str) -> Generator:

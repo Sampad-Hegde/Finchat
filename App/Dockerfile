@@ -1,9 +1,5 @@
 FROM python:3.10-slim
 
-WORKDIR /app
-
-COPY . .
-
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -11,6 +7,10 @@ RUN apt-get update && apt-get install -y \
     git
 
 RUN pip3 install torch --index-url https://download.pytorch.org/whl/cpu
+
+WORKDIR /app
+
+COPY . .
 
 RUN pip3 install -r requirements.txt
 
