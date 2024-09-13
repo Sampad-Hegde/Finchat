@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     git
 
+RUN pip3 install torch --index-url https://download.pytorch.org/whl/cpu
+
 RUN pip3 install -r requirements.txt
 
 EXPOSE 8501

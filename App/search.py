@@ -6,14 +6,12 @@ from torch.cuda import is_available
 
 class Search:
     def __init__(self, collection_name: str = 'annual_reports'):
+        print("Milvus Host: ", os.getenv('MILVUS_HOST', 'localhost'), "Milvus POrt : ", int(os.getenv('MILVUS_PORT', 19530)))
         if os.getenv('MILVUS_USER', '') == '' or os.getenv('MILVUS_PASSWORD', '') == '':
             print('Milvus User or Password not set; using the default creds')
-            self.milvus_client = MilvusClient(host=os.getenv('MILVUS_HOST', 'localhost'),
-                                              port=int(os.getenv('MILVUS_PORT', 19530)),
-                                              timeout=5)
+            self.milvus_client = MilvusClient(uri=f"http://{os.getenv('MILVUS_HOST', 'localhost')}:{int(os.getenv('MILVUS_PORT', '19530'))}", timeout=5)
         else:
-            self.milvus_client = MilvusClient(host=os.getenv('MILVUS_HOST', 'localhost'),
-                                              port=int(os.getenv('MILVUS_PORT', 19530)),
+            self.milvus_client = MilvusClient(uri=f"http://{os.getenv('MILVUS_HOST', 'localhost')}:{int(os.getenv('MILVUS_PORT', '19530'))}",
                                               user=os.getenv('MILVUS_USER', ''),
                                               password=os.getenv('MILVUS_PASSWORD', ''),
                                               timeout=5)

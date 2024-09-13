@@ -1,17 +1,19 @@
 import streamlit as st
-from ollama import chat
+from ollama import Client
 from prompt import Prompt
 from typing import Generator
 from search import Search
 from nifty_50 import nifty_mappings
+import os
 
 p = Prompt()
 s = Search()
-MODEL = 'phi3'
+llm = Client(host=f'http://{os.getenv("LLM_HOST", "localhost")}:11434')
+MODEL = os.getenv('LLM_MODEL', 'phi3')
 
 
 def ollama_stream_generator(query: str, context: str, company: str, fy: int or str) -> Generator:
-    stream = chat(model=MODEL,
+    stream = llm.chat(model=MODEL,
                   messages=p.get_prompt(query,
                                         context,
                                         company,
@@ -21,8 +23,7 @@ def ollama_stream_generator(query: str, context: str, company: str, fy: int or s
         yield chunk['message']['content']
 
 
-st.title("NiftyInsights Chatbot")
-st.text("Trained from FY 2014 to 2023 AR for all Nifty 50 Companies")
+st.title("Finchat: NiftyInsights Chatbot")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -35,10 +36,10 @@ if 'company' not in st.session_state:
 
 company_col, fy_col = st.columns(2)
 with company_col:
-    company_dropdown = st.selectbox("Choose your company", ['ALL'] + list(nifty_mappings.keys()))
+    company_dropdown = st.selectbox("Choose your company", list(nifty_mappings.keys()))
     st.session_state.company = company_dropdown
 with fy_col:
-    fy_dropdown = st.selectbox("Choose your FY", ['ALL', 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023])
+    fy_dropdown = st.selectbox("Choose your FY", [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023])
     st.session_state.fy = fy_dropdown
 
 for message in st.session_state.messages:
