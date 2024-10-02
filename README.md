@@ -15,10 +15,6 @@ https://github.com/Sampad-Hegde/Finchat/assets/42510098/7c115452-2ed1-478d-b330-
 ![Finchat-INFY](https://github.com/Sampad-Hegde/Finchat/assets/42510098/152da541-97fc-4448-9dd8-891b3f505a2e)
 
 
-
-### You can find the Hosted version here: https://finchat.sh-algo.in
-*Note that this application is running from my home servers so expect some downtimes*
-
 ### Key Features
 
 - **Advanced Financial Insights**: Finchat uses state-of-the-art RAG techniques to deliver precise and contextually relevant financial information.
